@@ -1,0 +1,42 @@
+name: Security checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  dependency-review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/dependency-review-action@v4
+        if: github.event_name == 'pull_request'
+
+  dependency-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.9.11"
+          enable-cache: true
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12.11.2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+      - name: Install locked dependencies
+        run: |
+          uv sync --project services/backend --all-groups --frozen
+          pnpm --dir apps/web install --frozen-lockfile
+      - name: Audit production and development dependencies
+        run: |
+          uv export --project services/backend --all-groups --no-emit-project --no-hashes --output-file /tmp/bioscope-requirements.txt
+          uv run --project services/backend pip-audit --requirement /tmp/bioscope-requirements.txt
+          pnpm audit --prod --audit-level high

@@ -1,0 +1,14 @@
+.git
+.next
+node_modules
+apps/web/.next
+apps/web/node_modules
+apps/web/test-results
+apps/web/playwright-report
+services/backend/.venv
+services/backend/.pytest_cache
+services/backend/.ruff_cache
+artifacts
+data/local
+*.pyc
+__pycache__

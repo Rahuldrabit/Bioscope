@@ -1,0 +1,4 @@
+$ErrorActionPreference = "Stop"
+
+uv run --project services/backend bioscope-export-openapi --output artifacts/openapi.json
+corepack pnpm --dir apps/web generate:api
