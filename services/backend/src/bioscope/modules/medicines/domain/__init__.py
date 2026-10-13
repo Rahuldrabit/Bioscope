@@ -1,0 +1,1 @@
+"""Medicine identity domain records."""

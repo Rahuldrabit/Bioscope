@@ -1,0 +1,1 @@
+"""Pure reliability report contracts."""

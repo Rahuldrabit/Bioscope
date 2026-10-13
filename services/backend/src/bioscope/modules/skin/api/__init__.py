@@ -1,0 +1,1 @@
+"""Skin observation API contracts."""

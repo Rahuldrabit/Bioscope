@@ -39,7 +39,9 @@ TypeScript, runs unit tests, builds the web application, and fails when the chec
 schema is stale. GitHub Actions additionally builds both containers and starts the production web
 image for an HTTP smoke test.
 
-## Phase 0 limitation
+## Local/demo limitation
 
-The platform contains no sessions, uploads, OCR, biomedical retrieval, agent plans or visualization
-results yet. The UI intentionally states this rather than showing fabricated content.
+The local workflow runs only deterministic, clearly labelled synthetic fixtures. The ChEMBL adapter
+and skin observation feature are opt-in (`ENABLE_EXTERNAL_SOURCES=false` and
+`ENABLE_SKIN_IMAGE_UPLOAD=false` by default). Do not treat a local demo result as biomedical
+evidence, diagnosis, medication advice, or a calibrated reliability score.

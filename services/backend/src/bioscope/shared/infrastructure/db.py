@@ -37,6 +37,14 @@ class Database:
     async def close(self) -> None:
         await self._engine.dispose()
 
+    async def create_test_schema(self) -> None:
+        """Create all metadata for isolated SQLite tests only; production uses Alembic."""
+
+        from bioscope.shared.infrastructure.models import metadata
+
+        async with self._engine.begin() as connection:
+            await connection.run_sync(metadata.create_all)
+
 
 class SqlAlchemyUnitOfWork:
     """Transaction adapter for application services that need persistence."""

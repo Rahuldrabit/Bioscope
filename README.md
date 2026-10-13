@@ -4,22 +4,22 @@ BioScope is an evidence-grounded biomedical education application in phased deve
 architecture deliberately separates general science explanation from diagnosis, treatment advice,
 and unvalidated confidence scores.
 
-## Current implementation: Phase 0
+## Current implementation: Phases 0–6 core path
 
-The repository now includes a bootable development platform:
+- Private owner-scoped sessions, consented image uploads, explicit medicine-candidate confirmation,
+  user deletion, and a clearly labelled deterministic OCR fixture.
+- Canonical evidence/source/snapshot/claim records, typed relationship checks, transparent source
+  lifecycle invalidation, and a disabled-by-default ChEMBL adapter.
+- Allowlisted deterministic workflow DAGs, durable events and cancellation, safety gates, scene
+  validation, provenance cards, evidence/graph/anatomy renderers, and reliability reports with no
+  fabricated numeric score.
+- Feature-flagged skin-photo handling that only returns an unavailable observation or urgent safety
+  escalation. It does not diagnose images or infer patient-specific biology.
 
-- Next.js App Router web shell with an accessible landing page and `/explore` workspace preview.
-- FastAPI liveness plus PostgreSQL/Redis/MinIO readiness and privacy-safe standardized error
-  envelopes.
-- Validated environment settings, async SQLAlchemy boundary, Alembic baseline migration, and local
-  PostgreSQL/Redis/MinIO Docker Compose stack.
-- OpenAPI export plus a checked-in schema and typed `openapi-fetch` client.
-- Backend/frontend tests, static type checks, dependency audits, browser/container smoke CI, and
-  ADRs 001–003.
-
-No user sessions, uploads, OCR, medical identity resolution, scientific retrieval, agent workflows,
-or visualization results have been implemented. The demo-style banner indicates platform state; it
-does not stand for medical demo output.
+The currently released science path uses synthetic software-test fixtures only. Every such result
+is marked `DEMO`; no live biomedical evidence or clinical conclusion is claimed. See the detailed
+[implementation status](docs/implementation-status.md) for completed checks and remaining release
+requirements.
 
 ## Run locally
 

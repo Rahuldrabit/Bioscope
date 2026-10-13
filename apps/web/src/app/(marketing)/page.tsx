@@ -19,7 +19,7 @@ export default function LandingPage() {
       </nav>
 
       <section className="hero">
-        <p className="eyebrow">Phase 0 · platform foundation</p>
+        <p className="eyebrow">Phase 6 · controlled educational exploration</p>
         <h1>Explore biology with evidence in view.</h1>
         <p className="hero-copy">
           BioScope is being built as a source-grounded biomedical learning environment—from
@@ -58,11 +58,12 @@ export default function LandingPage() {
 
       <section className="boundary-section" id="boundaries" aria-labelledby="boundaries-heading">
         <p className="eyebrow">Current scope</p>
-        <h2 id="boundaries-heading">The platform is not making biomedical claims yet.</h2>
+        <h2 id="boundaries-heading">The platform exposes its evidence limits.</h2>
         <p>
-          This initial build contains the web shell and API foundation only. Medicine recognition,
-          uploads, source retrieval, scenes, and agent workflows are intentionally unavailable
-          until their separately tested phases are implemented.
+          Medicine names and a named DEMO OCR fixture can be added to a private local session, but
+          every identity stays unconfirmed until the user chooses it. Workflow scenes, provenance,
+          and reliability panels currently show synthetic test fixtures—not live biomedical results.
+          Skin uploads are separately opt-in and never diagnose an image or infer personal biology.
         </p>
       </section>
     </main>

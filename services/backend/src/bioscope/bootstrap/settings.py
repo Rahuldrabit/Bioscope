@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from functools import lru_cache
+from pathlib import Path
 from typing import Literal
 from urllib.parse import urlparse
 
@@ -35,6 +36,7 @@ class Settings(BaseSettings):
     enable_numeric_confidence: bool = False
     max_upload_mb: int = Field(default=10, ge=1, le=100)
     asset_retention_days: int = Field(default=7, ge=1, le=365)
+    local_asset_dir: Path = Path("data/local/assets")
 
     @field_validator("database_url")
     @classmethod

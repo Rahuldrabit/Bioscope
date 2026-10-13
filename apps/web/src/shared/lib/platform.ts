@@ -1,5 +1,5 @@
 export const platformState = {
-  phase: 0,
+  phase: 6,
   biomedicalInferenceAvailable: false,
   demoMode: true,
 } as const;

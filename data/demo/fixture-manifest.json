@@ -1,0 +1,6 @@
+{
+  "schema_version": "1.0",
+  "provenance": "DEMO",
+  "purpose": "Synthetic test data for BioScope software workflows; not biomedical evidence.",
+  "fixtures": ["demo-aspirin.png", "synthetic-evidence-claim"]
+}

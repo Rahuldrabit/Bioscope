@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bioscope.local/schemas/scene-spec-1.0.json",
+  "title": "BioScope SceneSpec",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "scene_id", "kind", "title", "epistemic_label", "claim_ids", "elements", "relations", "fallback"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "scene_id": {"type": "string", "pattern": "^scene_[a-z0-9]+$"},
+    "kind": {"enum": ["interaction_network", "evidence_table", "molecular_structure", "skin_layer"]},
+    "title": {"type": "string", "maxLength": 160},
+    "epistemic_label": {"enum": ["DEMO_SYNTHETIC", "CURATED_EDUCATIONAL_SCHEMATIC", "VERIFIED_STRUCTURE"]},
+    "claim_ids": {"type": "array", "items": {"type": "string"}, "minItems": 0, "maxItems": 50},
+    "elements": {"type": "array", "maxItems": 100},
+    "relations": {"type": "array", "maxItems": 200},
+    "fallback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "reason"],
+      "properties": {
+        "kind": {"const": "evidence_table"},
+        "reason": {"type": "string", "maxLength": 240}
+      }
+    },
+    "structure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pdb_id", "source_url"],
+      "properties": {
+        "pdb_id": {"type": "string", "pattern": "^[0-9A-Za-z]{4}$"},
+        "source_url": {"type": "string", "pattern": "^https://www\\.rcsb\\.org/"}
+      }
+    },
+    "asset_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "provenance", "license"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^asset_[a-z0-9_]+$"},
+        "provenance": {"const": "CURATED_EDUCATIONAL_SCHEMATIC"},
+        "license": {"type": "string", "maxLength": 160}
+      }
+    }
+  }
+}

@@ -76,13 +76,43 @@ h2 { font-size: clamp(2rem, 4vw, 3.3rem); letter-spacing: -.05em; line-height: 1
 .workspace-panel h2 { font-size: 1.5rem; }
 .workspace-panel p, .workspace-panel li { color: var(--muted); line-height: 1.55; }
 .intake-panel label { display: block; font-size: .85rem; font-weight: 700; margin: 1.6rem 0 .5rem; }
-textarea { border: 1px solid var(--line); border-radius: .5rem; font: inherit; padding: .75rem; resize: vertical; width: 100%; }
-button { background: #d4dddf; border: 0; color: #65777b; cursor: not-allowed; margin-top: 1rem; width: 100%; }
+input, textarea { border: 1px solid var(--line); border-radius: .5rem; font: inherit; padding: .75rem; resize: vertical; width: 100%; }
+input[type="checkbox"] { height: 1rem; padding: 0; width: 1rem; }
+button { border: 0; font: inherit; }
+.primary-button, .secondary-button, .text-button { cursor: pointer; font-weight: 700; margin-top: 1rem; }
+.primary-button { background: var(--aqua-dark); border-radius: .6rem; color: var(--white); padding: .8rem 1rem; width: 100%; }
+.secondary-button { background: var(--white); border: 1px solid var(--line); border-radius: .6rem; color: var(--ink); padding: .8rem 1rem; width: 100%; }
+.text-button { background: transparent; color: var(--aqua-dark); padding: .2rem 0; text-align: left; text-decoration: underline; }
+button:disabled { cursor: not-allowed; opacity: .55; }
+.panel-copy, .status-line { color: var(--muted); line-height: 1.55; }
+.intake-panel form { margin-top: 1.4rem; }
+.consent-row { align-items: flex-start; color: var(--muted); display: flex !important; font-size: .82rem !important; font-weight: 400 !important; gap: .55rem; line-height: 1.4; }
+.safety-notice { background: #eef8f8; border-left: 3px solid var(--aqua-dark); border-radius: .3rem; display: grid; gap: .35rem; margin-top: 2rem; padding: 1rem; text-align: left; width: min(100%, 440px); }
+.safety-notice span { color: var(--muted); font-size: .9rem; line-height: 1.45; }
+.candidate-list { list-style: none; margin: 1rem 0 0; padding: 0; }
+.candidate-list li { border-bottom: 1px solid var(--line); display: grid; gap: .35rem; padding: 1rem 0; }
+.candidate-list span { color: var(--muted); font-size: .9rem; }
+.candidate-list small { color: var(--aqua-dark); font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.confirmed-list { border-top: 2px solid var(--aqua); margin-top: 1.5rem; padding-top: 1rem; }
+.confirmed-list p:last-child { color: var(--ink); font-weight: 700; }
+.error-message { background: #fff0ef; border-left: 3px solid #b64037; color: #7a211b; margin-top: 1rem; padding: .75rem; }
 .viewer-panel { align-items: center; display: flex; flex-direction: column; justify-content: center; min-height: 460px; text-align: center; }
 .viewer-panel p { max-width: 430px; }
 .viewer-orb { background: radial-gradient(circle at 30% 30%, #90e6db, var(--aqua-dark) 45%, var(--slate) 100%); border-radius: 50%; box-shadow: 0 0 0 20px rgba(32, 165, 165, .08), 0 0 0 60px rgba(32, 165, 165, .05); height: 125px; margin-bottom: 4rem; width: 125px; }
 .evidence-panel ul { list-style: none; padding: 0; }
 .evidence-panel li { border-bottom: 1px solid var(--line); font-size: .9rem; padding: .8rem 0; }
+.claim-card, .reliability-panel, .skin-panel { border-top: 1px solid var(--line); margin-top: 1.5rem; padding-top: 1.25rem; }
+.claim-card h3, .reliability-panel h3 { font-size: 1rem; }
+.claim-warning, .reliability-panel small { color: var(--muted); font-size: .85rem; }
+.reliability-panel dl { display: grid; gap: .45rem; margin: 1rem 0; }
+.reliability-panel dl div { display: flex; flex-wrap: wrap; gap: .4rem; justify-content: space-between; }
+.reliability-panel dt { color: var(--muted); font-size: .75rem; text-transform: capitalize; }
+.reliability-panel dd { font-size: .75rem; font-weight: 700; margin: 0; text-align: right; }
+.reliability-panel ul, .skin-result ul { list-style: disc; padding-left: 1.25rem; }
+.skin-panel { text-align: left; }
+.skin-panel form { margin-top: 1rem; }
+.skin-panel label { display: block; font-size: .85rem; font-weight: 700; margin-bottom: .5rem; }
+.skin-result { background: #fff7e5; border-left: 3px solid #a76e00; margin-top: 1rem; padding: .8rem; }
 
 @media (max-width: 800px) {
   .hero, .capability-section, .boundary-section { padding: 3rem 1.25rem; }

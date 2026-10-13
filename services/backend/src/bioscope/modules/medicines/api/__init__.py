@@ -1,0 +1,1 @@
+"""Medicine confirmation HTTP boundary."""

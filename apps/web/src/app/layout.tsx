@@ -5,7 +5,7 @@ import "@/shared/styles/globals.css";
 
 export const metadata: Metadata = {
   title: "BioScope AI | Evidence-grounded biomedical learning",
-  description: "An educational biomedical explorer. Phase 0 platform preview.",
+  description: "An educational biomedical explorer with explicit evidence and safety limits.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {

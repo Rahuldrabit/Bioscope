@@ -1,8 +1,12 @@
 # BioScope backend
 
-The Phase 0 backend provides configuration validation, health endpoints, a standard API
-error envelope, the SQLAlchemy async database boundary, and an Alembic migration baseline.
-It does not retrieve biomedical evidence or make medical inferences.
+The backend provides private educational sessions/uploads, confirmation-gated demo evidence,
+durable bounded workflows, source/claim provenance, SceneSpec validation, reliability reports with
+null numeric scores, and feature-flagged non-diagnostic skin observation handling. It never makes
+clinical diagnoses, treatment recommendations, dose changes, or patient-specific molecular claims.
+
+Live biomedical-source release is not enabled: the shipped evidence fixture is explicitly
+synthetic/testing-only.
 
 Run from the repository root with `make dev`, or locally with:
 
